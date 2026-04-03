@@ -152,6 +152,17 @@ a {
 .features-list-item {
   width: calc((100% - 24px * 3) / 4);
 }
+.features-icon {
+  width: 100%;
+  padding: 24px;
+  background: #f4f4fd;
+  border: 1px solid #8e8f99;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 8px;
+}
 .features-list-title {
   font-weight: 500;
   font-size: 20px;
