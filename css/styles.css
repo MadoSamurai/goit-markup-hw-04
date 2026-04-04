@@ -71,18 +71,29 @@ a {
   color: #2e2f42;
   padding: 24px 0;
   display: block;
+  position: relative;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
-.nav-link:hover,
-.address-link:hover,
-.address-link:active,
-.address-link:focus {
-  color: #404bbf;
+.nav-link::before {
+  content: '';
+  position: absolute;
+  bottom: -1px;
+  width: 100%;
+  height: 4px;
+  background: #404bbf;
+  border-radius: 2px;
+  transform: scaleX(0);
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-property: transform;
 }
-.nav-link:active,
-.nav-link:focus {
-  text-decoration: underline;
-  color: #404bbf;
+.nav-link:hover.nav-link::before,
+.nav-link:focus.nav-link::before,
+.nav-link:active.nav-link::before {
+  transform: scaleX(1);
 }
+
 .address-list {
   display: flex;
   gap: 40px;
@@ -96,12 +107,28 @@ a {
   font-style: normal;
   padding: 24px 0;
   display: block;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
+
+.nav-link:hover,
+.nav-link:active,
+.nav-link:focus,
+.address-link:hover,
+.address-link:active,
+.address-link:focus {
+  color: #404bbf;
+}
+
 .hero {
   background-color: #2e2f42;
   padding-top: 188px;
   padding-bottom: 188px;
   text-align: center;
+  max-width: 1440px;
+  margin: 0 auto;
+  background-image: linear-gradient(rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)), url(../images/hero-bg.jpg);
+  background-repeat: no-repeat;
 }
 
 .hero-title {
@@ -233,6 +260,24 @@ a {
 .portfolio-card-descr {
   text-align: left;
 }
+.team-links {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 8px;
+}
+.team-link {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #4d5ae5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  fill: #f4f4fd;
+}
+
 .portfolio-title {
   margin-bottom: 72px;
 }
