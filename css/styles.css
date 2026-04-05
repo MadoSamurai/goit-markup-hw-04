@@ -313,10 +313,9 @@ a {
 }
 .portfolio-card {
   width: calc((100% - 24px * 2) / 3);
-  box-shadow:
-    0 2px 1px 0 rgba(46, 47, 66, 0.08),
-    0 1px 1px 0 rgba(46, 47, 66, 0.16),
-    0 1px 6px 0 rgba(46, 47, 66, 0.08);
+  transition-property: box-shadow;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 .portfolio-card-content {
   position: relative;
@@ -339,8 +338,10 @@ a {
   color: #f4f4fd;
 }
 .portfolio-card:hover {
-  transition-duration: 250ms;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow:
+    0 2px 1px 0 rgba(46, 47, 66, 0.08),
+    0 1px 1px 0 rgba(46, 47, 66, 0.16),
+    0 1px 6px 0 rgba(46, 47, 66, 0.08);
 }
 .portfolio-card:hover .portfolio-card-info {
   transform: translateY(0%);
